@@ -171,6 +171,17 @@ a:focus {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+.nav-login {
+  padding: 5px 20px;
+  color: #7d1c1c;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+
 
 .custom_nav-container .nav_search-btn {
   width: 35px;
