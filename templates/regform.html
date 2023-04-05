@@ -1,0 +1,220 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="../static/css/formstyle.css" />
+{% endblock %}
+
+{% block title %}
+Registration Form
+{% endblock %}
+
+{% block main %}
+<div class="gradient-custom-2">
+  <form action="/registerPatient" method="post" class="needs-validation" novalidate>
+    <section class="h-100 h-custom gradient-custom-2">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12">
+            <div class="card card-registration card-registration-2" style="border-radius: 15px">
+              <div class="card-body p-0">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <div class="p-5">
+                      <h3 class="fw-normal mb-5" style="color: #4835d4">
+                        General Infomation
+                      </h3>
+
+                      <div class="mb-4 pb-2">
+                        <input name="nic" type="text" class="form-control form-control-lg" required />
+                        <label class="form-label" for="fname">NIC/ Hospital ID</label>
+                        <div class="invalid-feedback">
+                          Please provide a valid NIC.
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-4 pb-2">
+                          <div class="form-outline">
+                            <input type="text" id="form3Examplev2" name="fname" class="form-control form-control-lg"
+                              required />
+                            <label class="form-label" for="form3Examplev2">First name</label>
+                            <div class="invalid-feedback">
+                              This field is mandatory
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4 pb-2">
+                          <div class="form-outline">
+                            <input type="text" id="form3Examplev3" name="lname" class="form-control form-control-lg"
+                              required />
+                            <label class="form-label" for="form3Examplev3">Last name</label>
+                            <div class="invalid-feedback">
+                              This field is mandatory
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-5 mb-4 pb-2">
+                          <div class="form-outline form-white">
+                            <input type="text" id="form3Examplea4" name="age" class="form-control form-control-lg"
+                              required />
+                            <label class="form-label" for="form3Examplea4">Age</label>
+                            <div class="invalid-feedback">
+                              This field is mandatory
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-5 mb-4 pb-2">
+                          <div class="form-group">
+                            <select name="gender" class="form-control form-control-lg" required id="exampleFormControlSelect1">
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                            </select>
+                            <label class="form-label" for="form3Examplea4">Gender</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-5 mb-4 pb-2">
+                        <div class="row">
+                          <div class="form-outline form-white">
+                            <input type="text" id="form3Examplea4" name="blood" class="form-control form-control-lg"
+                              required />
+                            <label class="form-label" for="form3Examplea4">Blood Type</label>
+                            <div class="invalid-feedback">
+                              This field is mandatory
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-5 mb-4 pb-2">
+                          <div class="form-outline">
+                            <input type="text" id="form3Examplev4" name="email" class="form-control form-control-lg"
+                              required />
+                            <label class="form-label" for="form3Examplev4">Email Adress</label>
+                            <div class="invalid-feedback">
+                              This field is mandatory
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
+                          <div class="form-outline">
+                            <input type="text" id="form3Examplev5" name="contact_no"
+                              class="form-control form-control-lg" required />
+                            <label class="form-label" for="form3Examplev5">Contact No.</label>
+                            <div class="invalid-feedback">
+                              This field is mandatory
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 mb-4">
+                          <input name="adress" type="text" class="form-control form-control-lg" required />
+                          <label class="form-label" for="adress">Adress</label>
+                          <div class="invalid-feedback">
+                            This field is mandatory.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
+                          <input name="immediate_contact" type="text" class="form-control form-control-lg" required />
+                          <label class="form-label" for="ic">Immediate Contact</label>
+                          <div class="invalid-feedback">
+                            This field is mandatory.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 bg-indigo text-white contactInfoMain">
+                    <div class="p-5">
+                      <h3 class="fw-normal mb-5">Medical History</h3>
+                      <div class="row">
+                        <div class="mb-4 pb-2">
+                          <textarea name="famhistory" class="form-control" required name="famhistory" rows="" cols="45"
+                            placeholder="Eg: Asthma, Cancer, Diabetes, Psychiatric disorder, ..etc" required></textarea>
+                          <label class="form-label" for="famhistory">Any imporatnt health conditions that apply to you
+                            or any member of your immediate relatives
+                          </label>
+                          <div class="invalid-feedback">
+                            This field is mandatory.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="mb-4 pb-2">
+                          <div class="form-outline form-white">
+                            <textarea class="form-control" name="medihistory" rows="2" cols="45"
+                              placeholder="If yes please provide details else enter 'no'" required></textarea>
+                            <label class="form-label" for="form3Examplea2">Are you currently taking any
+                              medication?</label>
+                              <div class="invalid-feedback">
+                                This field is mandatory.
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="mb-4 pb-2">
+                          <div class="form-outline form-white">
+                            <textarea class="form-control" name="allergy" rows="2" cols="45"
+                              placeholder="If yes please provide details else enter 'no'" required></textarea>
+                            <label class="form-label" for="form3Examplea3">Do you have any medicinal/non-medicinal
+                              allergies?</label>
+                              <div class="invalid-feedback">
+                                This field is mandatory.
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="mb-4 pb-2">
+                          <div class="form-outline form-white">
+                            <textarea class="form-control" name="drug" rows="2" cols="45"
+                              placeholder="If yes please provide details else enter 'no'" required></textarea>
+                            <label class="form-label" for="form3Examplea4">Are you taking any drugs</label>
+                            <div class="invalid-feedback">
+                              This field is mandatory.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="mb-4 pb-2">
+                          <div class="form-outline form-white">
+                            <textarea class="form-control" name="adding" rows="2" cols="45" required></textarea>
+                            <label class="form-label" for="form3Examplea3">Additional Note</label>
+                            <div class="invalid-feedback">
+                              This field is mandatory.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-light btn-lg" data-mdb-ripple-color="dark">
+                        Register
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </form>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="../static/js/formvalidation.js"></script>
+</div>
+{% endblock %}

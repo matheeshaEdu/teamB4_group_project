@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<!-- Template Main CSS File -->
+<link href="../static/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="../static/css/styleregena.css">
+{% endblock %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block main %}
+
+<body>
+
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <a href="/" class="logo me-auto"><img src="../static/img/logo.png" alt=""></a>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li class="navlistitem" style="padding:0 2rem 0 2rem;">
+          <form class="d-flex" role="search" action="/viewPatient" method="get">
+            <input name="dbpatientID" class="form-control me-2" type="search" placeholder="Search by ID" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </li>
+        <li class="navlistitem" style="padding:0 2rem 0 2rem;">
+          <div class="nav-item">
+            <p style="display: inline-block;">{{ doctor_name["fname"] }} {{ doctor_name["lname"] }}</p>
+            <img src="../static/img/undraw_profile.svg" width="50px" alt="">
+          </div>
+        </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="/logout" class="appointment-btn scrollto"><span class="d-none d-md-inline"> LOGOUT </a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <div id="hero2">
+    <img src="../static/img/Untitled-1.jpg" alt="">
+  </div>
+
+    <section class="inner-page">
+      <div class="container">
+        <div class="jumbotron">
+          <h1 class="display-4">Hello, Doctor</h1>
+          <p class="lead">Welcome to the best modern healthrecord system in the world.</p>
+          <hr class="my-4">
+          <!-- ======= Facts Section ======= -->
+    <section id="facts" style="padding: 3rem 0;">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">Facts</h3>
+          <p class="section-description" style="text-align: center;">Details about who use our site</p>
+        </div>
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Patients</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="534" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Doctors</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hospitals</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Co Workers</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Facts Section -->
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="/" role="button" style="margin-top: 2rem;">Learn more</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div  class="fotterimg">
+      <img src="../static/img/rewjrwr.jpg" width="1600" alt="">
+    </div>
+
+    
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Amigos</h3>
+              <p>
+                57 Ramakrishna Rd <br>
+                Colombo, Sri Lanka<br><br>
+                <strong>Phone:</strong> 0112 360 212<br>
+                <strong>Email:</strong> amigos@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- <div class="copyright">
+        &copy; Copyright <strong><span>Medicio</span></strong>. All Rights Reserved
+      </div> -->
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
+        Designed by Amigos
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/vendor/aos/aos.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/js/main.js"></script>
+
+  {% endblock %}

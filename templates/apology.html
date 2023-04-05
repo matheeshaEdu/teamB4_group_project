@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Apology
+{% endblock %}
+
+{% block main %}
+<!-- https://memegen.link/ -->
+<div class="navtitle navigation" style="  background-image: url('../static/unsuccesss.jpg')">
+  <h1 class="head1"></h1>
+</div>
+<div style="text-align:center">
+
+  <img alt="{{ top }}" class="border img-fluid" src="https://api.memegen.link/images/disastergirl/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg" title="{{ top }}">
+
+</div>
+{% endblock %}

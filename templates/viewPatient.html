@@ -1,0 +1,173 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<!-- Template Main CSS File -->
+<link href="../static/css/style.css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+View Patient
+{% endblock %}
+
+{% block main %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a href="/dashboard">
+    <i class="fa fa-heartbeat" aria-hidden="true" style="padding: 1rem;font-size:40px;"></i></a>
+  <div style="border-radius:20px; background-color: rgb(118, 202, 214);">
+    <a class="navbar-brand" href="#">
+      {{ row[0]["NIC"] }} Health Record</a>
+  </div>
+  <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
+    <li class="nav-item active">
+      <a class="nav-link" href="/dashboard"> <i class="fa fa-home" aria-hidden="true"></i>
+        Home <span class="sr-only">(current)</span></a>
+    </li>
+</nav>
+
+<div class="herost9" style="padding-bottom: 6rem; margin-bottom: 3rem; color: white; text-align: center;">
+<h1 style="margin-top: 4rem;">Patient Health History <i class="fa fa-stethoscope" aria-hidden="true"></i>
+</h1>
+</div>
+
+<div class="container">
+  <h2>Health History</h2>
+  <div class="table-responsive-md">
+    <table class="table table-bordered">
+      {% for i in row %}
+      <tr>
+        <th>Firstname</th>
+        <td>{{ i["fname"] }}</td>
+      </tr>
+      <tr>
+        <th>Lastname</th>
+        <td>{{ i["lname"] }}</td>
+      </tr>
+      <tr>
+        <th>Age</th>
+        <td>{{ i["age"] }}</td>
+      </tr>
+      <tr>
+        <th>Gender</th>
+        <td>{{ i["gender"] }}</td>
+      </tr>
+      <tr>
+        <th>Blood Type</th>
+        <td>{{ i["blood"] }}</td>
+      </tr>
+      <tr>
+        <th>Adress</th>
+        <td>{{ i["adress"] }}</td>
+      </tr>
+      <tr>
+        <th>Family Health History</th>
+        <td>{{ i["familyHealth"] }}</td>
+      </tr>
+      <tr>
+        <th>Current Medications</th>
+        <td>{{ i["currentMedication"] }}</td>
+      </tr>
+      <tr>
+        <th>Allergies</th>
+        <td>{{ i["allergies"] }}</td>
+      </tr>
+      <tr>
+        <th>Drug Notice</th>
+        <td>{{ i["drugNotice"] }}</td>
+      </tr>
+      <tr>
+        <th>Additional info.</th>
+        <td>{{ i["additional"] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <div class="doctorsnote">
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+        aria-expanded="false" aria-controls="collapseExample">
+        View Doctor s' Notes
+      </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      {% for i in notes %}
+      <div class="card" style="margin: 4rem;">
+        <div class="card-header">
+          Special Notes about patient
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Patient ID: {{ i["NIC"] }}</h5>
+          <p class="card-text">{{ i["note"] }}</p>
+        </div>
+        <div class="card-footer text-muted">
+          <p>Added By: Dr.{{ i["first_name"] }} (ID: {{ i["doctor_id"] }}) @ {{ i["date_time"] }} </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="addnote" style="margin: 5rem 1rem;">
+    <form action="/add_note" method="post">
+      <textarea class="form-control" name="doctorsnote" id="" cols="50" rows="5"
+        placeholder="Add a note about patient"></textarea>
+      <button class="btn btn-primary" type="submit" style="margin-top: 0.8rem;">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-info">
+            <h3>Amigos</h3>
+            <p>
+              57 Ramakrishna Rd <br>
+              Colombo, Sri Lanka<br><br>
+              <strong>Phone:</strong> 0112 360 212<br>
+              <strong>Email:</strong> amigos@gmail.com<br>
+            </p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- <div class="copyright">
+          &copy; Copyright <strong><span>Medicio</span></strong>. All Rights Reserved
+        </div> -->
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
+      Designed by Amigos
+    </div>
+  </div>
+</footer><!-- End Footer -->
+{% endblock %}
